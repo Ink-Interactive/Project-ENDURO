@@ -24,7 +24,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFindSessionsFinished, bool, Succe
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnJoinSessionFinished, bool, Success);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDestroySessionFinished, bool, Success);
 
-UCLASS()
+UCLASS(BlueprintType)
 class PROJECTENDURO_API UMultiplayerSessionsSubsystem : public UGameInstanceSubsystem {
 	
 	GENERATED_BODY()
@@ -69,6 +69,14 @@ public:
 	
 	FOnDestroySessionCompleteDelegate DestroySessionCompleteDelegate;
 	FDelegateHandle DestroySessionCompleteHandle;
+	
+	//Vars
+	bool CreateAfterDestroy = false;
+	int PendingMaxConnections = 0;
+	bool PendingIsLan = true;
+	FString PendingMatchType;
+	bool JoinAfterDestroy = false;
+	int32 PendingJoinIndex = INDEX_NONE;
 	
 private:
 	void HandleCreateSessionComplete(FName SessionName, bool WasSuccessful);

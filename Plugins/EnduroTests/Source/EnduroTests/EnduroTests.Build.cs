@@ -40,7 +40,9 @@ public class EnduroTests : ModuleRules
 				"FunctionalTesting",
                 "AutomationController",
                 "UnrealEd",
-                "ProjectEnduro"
+                "ProjectEnduro",
+                "OnlineSubsystem",
+                "OnlineSubsystemUtils"
 			}
 			);
 		

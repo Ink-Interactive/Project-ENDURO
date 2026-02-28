@@ -14,6 +14,10 @@
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
 	"Installed": false,
+    "Plugins": [
+      { "Name": "OnlineSubsystem", "Enabled": true },
+      { "Name": "OnlineSubsystemUtils", "Enabled": true }
+    ],
 	"Modules": [
 		{
 			"Name": "EnduroTests",
